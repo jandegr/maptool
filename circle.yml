@@ -12,6 +12,7 @@ dependencies:
     - sudo apt-get install libgtk2.0-dev 
     - sudo apt-get install librsvg2-bin 
     - sudo apt-get install g++
+    - sudo pat-get install osmctools
     - bash build.sh
   cache_directories:
     - "~/assets/"
@@ -30,6 +31,7 @@ test:
     - ./navit/bin/navit/maptool/maptool -P  -6 -s9 -e9 -i ~/${CIRCLE_BRANCH}-latest.osm.pbf $CIRCLE_ARTIFACTS/${CIRCLE_BRANCH}.bin
     - ./navit/bin/navit/maptool/maptool -P  -6 -s10 -e10 -i ~/${CIRCLE_BRANCH}-latest.osm.pbf $CIRCLE_ARTIFACTS/${CIRCLE_BRANCH}.bin
     - ./navit/bin/navit/maptool/maptool -P  -6 -s11 -i ~/${CIRCLE_BRANCH}-latest.osm.pbf $CIRCLE_ARTIFACTS/${CIRCLE_BRANCH}.bin
+    - osmctools --help
 general:
   artifacts:
     - "~/assets/binmaps/"
